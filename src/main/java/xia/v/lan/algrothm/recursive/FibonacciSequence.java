@@ -34,9 +34,24 @@ public class FibonacciSequence {
         }
     }
 
+    static int fib3(int n){
+        if(n == 1 || n == 2){
+            return 1;
+        }
+        int pre = 1;
+        int cur = 1;
+        for(int i=3;i<=n;i++){
+            int sum = pre + cur;
+            pre = cur;
+            cur = sum;
+        }
+        return cur;
+    }
+
     public static void main(String[] args) {
         int n = 10;
         System.out.println(fib1(n));
         System.out.println(fib2(n));
+        System.out.println(fib3(n));
     }
 }
